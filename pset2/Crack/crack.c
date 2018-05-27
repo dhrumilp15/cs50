@@ -4,6 +4,8 @@
 #define _XOPEN_SOURCE
 #include <unistd.h>
 
+#define alphabet 52
+
 #include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,7 +24,7 @@ int main(int argc, string argv[])
     string salt = "50"; //cs"50"
 
     //Creates a string to hold the alphabet
-    char letters[52];
+    char letters[alphabet];
 
     //Capital letter initialization
     int i = (int) 'A';
@@ -38,7 +40,7 @@ int main(int argc, string argv[])
     int j = (int) 'a';
 
     //Lowercase letter generation
-    for (int k = 26; k < 52; k++)
+    for (int k = 26; k < alphabet; k++)
     {
         letters[k] = j;
         j++;
@@ -49,18 +51,18 @@ int main(int argc, string argv[])
     pass[4] = '\0';
 
     //character = c, 1c
-    for (int l = 0; l < 52; l++)
+    for (int l = 0; l < alphabet; l++)
     {
         pass[0] = letters[l];
 
         if (strcmp(crypt(pass, salt), uhash) == 0)
         {
             printf("%s\n", pass);
-            return 0; // To ensure that the program doesn't continue running after getting the passoword
+            return 0; // To ensure that the program doesn't continue running after getting the password
         }
 
         //2c
-        for (int m = 0; m < 52; m++)
+        for (int m = 0; m < alphabet; m++)
         {
             pass[1] = letters[m];
 
@@ -71,7 +73,7 @@ int main(int argc, string argv[])
             }
 
             //3c
-            for (int n = 0; n < 52; n++)
+            for (int n = 0; n < alphabet; n++)
             {
                 pass[2] = letters[n];
 
@@ -82,7 +84,7 @@ int main(int argc, string argv[])
                 }
 
                 //4c
-                for (int o = 0; o < 52; o++)
+                for (int o = 0; o < alphabet; o++)
                 {
                     pass[3] = letters[n];
 
@@ -93,7 +95,7 @@ int main(int argc, string argv[])
                     }
 
                     //5c
-                    for (int p = 0; p < 52; p++)
+                    for (int p = 0; p < alphabet; p++)
                     {
                         pass[4] = letters[n];
 

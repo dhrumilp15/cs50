@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     }
 
     int length = 0;
-    //The given length must be an integer and grater than 0
+    //The given length must be an integer and greater than 0
     if (atoi(argv[1]) > 0)
     {
         length = atoi(argv[1]);

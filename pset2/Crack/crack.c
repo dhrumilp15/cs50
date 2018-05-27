@@ -23,7 +23,7 @@ int main(int argc, string argv[])
     string uhash = argv[1]; // to store it to avoid continuously checking for the second argument later on
     string salt = "50"; //cs"50"
 
-    //Creates a string to hold the alphabet
+    //Creates a string (1-dimensional array of characters) to hold the upper- and lowercase alphabet
     char letters[alphabet];
 
     //Capital letter initialization

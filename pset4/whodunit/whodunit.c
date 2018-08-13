@@ -44,8 +44,7 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    int colour = 0xfffff;
-    int *clr = &colour;
+    int colour = 0x000000;
 
     // write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
@@ -70,7 +69,7 @@ int main(int argc, char *argv[])
 
             if (triple.rgbtRed == 0xff)
             {
-                fwrite(&clr, sizeof(RGBTRIPLE), 1, outptr);
+                fwrite(&colour, sizeof(RGBTRIPLE), 1, outptr);
             }
             else
             {

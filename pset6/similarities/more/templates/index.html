@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class = 'col'>
+        <form action = "/score" enctype = "multipart/form data" method="post">
+            <input class = "form-control" name = "string1" type = "text" value = >String 1</input>
+            <input class = "form-control" name = "string2" type = "text">String 2</input>
+            
+            <button class = "btn btn-default" type = "submit">Score</button>
+        </form>
+    </div>
+
+{% endblock %}
